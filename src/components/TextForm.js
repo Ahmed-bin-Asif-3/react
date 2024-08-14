@@ -21,25 +21,25 @@ export default function TextForm(props) {
     setText(clearText);
     props.showAlert("Text Cleared", "success");
   }
-  const handleCopyClick = () => {
-    // Assuming `textToCopy` is the text you want to copy. You might need to get this from somewhere.
-    let textToCopy = text;
+  // const handleCopyClick = () => {
+  //   // Assuming `textToCopy` is the text you want to copy. You might need to get this from somewhere.
+  //   let textToCopy = text;
   
-    navigator.clipboard.writeText(textToCopy)
-      .then(() => {
-        console.log('Text copied to clipboard');
-        props.showAlert("Text Copied", "success");
-      })
-      .catch(err => {
-        console.error('Failed to copy text: ', err);
-        props.showAlert("Failed to copy text", "error");
-      });
-  }
-  const handlePasteClick = () => {
-    navigator.clipboard.readText()
-        setText(prevText => text + prevText);
-        console.log('Pasted text:', text);
-  }
+  //   navigator.clipboard.writeText(textToCopy)
+  //     .then(() => {
+  //       console.log('Text copied to clipboard');
+  //       props.showAlert("Text Copied", "success");
+  //     })
+  //     .catch(err => {
+  //       console.error('Failed to copy text: ', err);
+  //       props.showAlert("Failed to copy text", "error");
+  //     });
+  // }
+  // const handlePasteClick = () => {
+  //   navigator.clipboard.readText()
+  //       setText(prevText => text + prevText);
+  //       console.log('Pasted text:', text);
+  // }
   
   const handleOnChange = (event)=>{
     // console.log("handle  clicks");
@@ -72,12 +72,12 @@ export default function TextForm(props) {
              <button type="submit" onClick={handleExtraSpaces} className="btn btn-primary ms-3 mb-3">
                Remove Spaces
              </button>
-             <button type="submit" onClick={handleCopyClick} className="btn btn-primary ms-3 mb-3">
+             {/* <button type="submit" onClick={handleCopyClick} className="btn btn-primary ms-3 mb-3">
                Copy
              </button>
              <button type="submit" onClick={handlePasteClick} className="btn btn-primary ms-3 mb-3">
                Paste
-             </button>
+             </button> */}
              <button type="submit" onClick={handleClearClick} className="btn btn-primary ms-3 mb-3">
                ClearAll
              </button>
